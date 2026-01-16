@@ -1,0 +1,11 @@
+user:
+  full_name: "John Doe"
+  email: "john@example.com"
+
+repos:
+  - name: "my-repo"
+    url: "https://github.com/user/my-repo.git"
+    branch: "main"
+  - name: "another-repo"
+    url: "https://github.com/user/another-repo.git"
+    branch: "develop"
