@@ -57,8 +57,11 @@ type yamlFileConfig struct {
 }
 
 func Load() (Config, error) {
-	if err := env.LoadEnvFile(); err != nil {
-		return Config{}, err
+	e := env.GetString("ENV", "development")
+	if e == "development" {
+		if err := env.LoadEnvFile(); err != nil {
+			return Config{}, err
+		}
 	}
 
 	logDir := env.GetString("LOG_DIR", "logs")
@@ -67,7 +70,7 @@ func Load() (Config, error) {
 		return Config{}, err
 	}
 
-	aiKey := env.GetString("AI_KEY", "")
+	aiKey := env.GetString("ANTHROPIC_API_KEY", "")
 
 	repoDir := env.GetString("REPO_DIR", "repos")
 	repoDir, err = filesystem.ResolvePath(repoDir)
@@ -82,7 +85,7 @@ func Load() (Config, error) {
 	}
 
 	config := Config{
-		Env: env.GetString("ENV", "production"),
+		Env: e,
 		Logger: LoggerConfig{
 			Dir: logDir,
 		},
