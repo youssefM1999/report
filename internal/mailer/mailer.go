@@ -12,7 +12,8 @@ import (
 )
 
 const (
-	FromName   = "Developer Activity Report"
+	FromName   = "Report My Work 4 Me"
+	FromEmail  = "reportmywork4me@gmail.com"
 	MaxRetries = 3
 )
 

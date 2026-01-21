@@ -21,7 +21,7 @@ Guidelines:
 - Use markdown formatting
 
 Output format for each commit:
-### <commit hash> - <brief title>
+### <brief title> - <commit hash>
 - <bullet point 1: what was changed>
 - <bullet point 2: why it matters or what problem it solves>
 - <bullet point 3: any notable technical decisions (optional, only if relevant)>
@@ -41,7 +41,7 @@ Guidelines:
 Output format:
 ## <Repository Name>
 
-### <commit hash> - <brief title>
+### <brief title> - <commit hash>
 - <bullet point 1: what was changed>
 - <bullet point 2: why it matters or what problem it solves>
 - <bullet point 3: any notable technical decisions (optional, only if relevant)>

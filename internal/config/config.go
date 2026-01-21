@@ -26,7 +26,7 @@ type UserConfig struct {
 }
 
 type MailConfig struct {
-	FromEmail string
+	APIKey string
 }
 
 type ReposConfig struct {
@@ -72,6 +72,8 @@ func Load() (Config, error) {
 
 	aiKey := env.GetString("ANTHROPIC_API_KEY", "")
 
+	sendgridAPIKey := env.GetString("SENDGRID_API_KEY", "")
+
 	repoDir := env.GetString("REPO_DIR", "repos")
 	repoDir, err = filesystem.ResolvePath(repoDir)
 	if err != nil {
@@ -91,6 +93,9 @@ func Load() (Config, error) {
 		},
 		AI: AIConfig{
 			Key: aiKey,
+		},
+		Mail: MailConfig{
+			APIKey: sendgridAPIKey,
 		},
 		Repos: ReposConfig{
 			Dir:          repoDir,
